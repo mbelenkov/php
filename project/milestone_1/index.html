@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Milestone 1</title>
+	<style type="text/css">
+		* {
+			box-sizing: inherit;
+		}
+		html {
+			background-color: #AAA;
+			font-family: Calibri, sans-serif;
+			box-sizing: border-box;
+		}
+		h2 {
+			color: #FFF;
+			font-size: 2em;
+		}
+		.inset {
+			color: rgba(170,170,170,.8);
+			text-shadow: 1px 4px 6px #ccc, 0 0 0 #000, 1px 4px 6px #ccc;
+		}
+		::-moz-selection{
+			background: #5af;
+			color: #FFF;
+			text-shadow: none;
+		}
+		::selection{
+			background: #5af;
+			color: #FFF;
+			text-shadow: none;
+		}
+		section {
+			width: 49%;
+			float: left;
+			text-align: center;
+			background-color: #CCC;
+			box-shadow: 0 0 5px 2px rgba(0,0,0,.5);
+			margin: 0 .5%;
+		}
+		main {
+			margin: 0 5%;
+		}
+		li {
+			text-align: left;
+			list-style-type: none;
+			margin: 5px;
+			padding-left: 5px;
+		}
+		li.sub {
+			margin-bottom: 20px;
+		}
+		li.subsub {
+			margin-bottom: 10px;
+		}
+		li.subsubsub {
+			margin-bottom: 5px;
+		}
+		h3,
+		h4 {
+			margin: 0;
+		}
+		.questionable {
+			background-color: lightgreen;
+		}
+	</style>
+</head>
+<body>
+
+<main>
+<section id="choice1">
+	<h2 class="inset">Movie Review Site</h2>
+	<ul>
+		<li class="sub"><h3>Accounts</h3>
+			<ul>
+				<li>Review</li>
+				<li>Access Profile</li>
+				<li class="subsub"><h4>Critics</h4>
+					<ul>
+						<li></li>
+						<li>Gated Account</li>
+					</ul>
+				</li>
+				<li class="subsub"><h4>Users</h4>
+					<ul>
+						<li></li>
+						<li>Free Account</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li class="sub"><h3>Site Visitors</h3>
+			<ul>
+				<li>Look at everything on the site related to movies</li>
+				<li>Search for movies</li>
+				<li>Can see review history of users</li>
+			</ul>
+		</li>
+		<li class="sub"><h3>Movies</h3>
+			<ul>
+				<li>Sort movies by genre</li>
+				<li>Sort movies by release date</li>
+				<li class="questionable">Upcoming movies</li>
+				<li>Short description</li>
+				<li>2 review numbers, critic and user</li>
+				<li class="questionable">Populate movies from database</li>
+			</ul>
+		</li>
+		<li class="sub"><h3>Rating system</h3>
+			<ul>
+				<li>Seperate between critics/users</li>
+				<li>Rating from 1-10</li>
+				<li>Average all critic reviews together</li>
+				<li>Average all user reviews together</li>
+				<li>Two averaged numbers per movie, critic and user</li>
+			</ul>
+		</li>
+	</ul>
+</section>
+
+<section id="choice2">
+	<h2 class="inset">Project Management Site</h2>
+	<ul>
+		<li class="sub"><h3>Accounts</h3>
+			<ul>
+				<li>Make Projects</li>
+				<li>Assign People to Projects</li>
+				<li>Manage Projects</li>
+				<li>View Your Assigned Projects</li>
+				<li class="subsub"><h4>Free Account</h4>
+					<ul>
+						<li>Create Maximum of 1 Project</li>
+					</ul>
+				</li>
+				<li class="subsub"><h4>Paid Account</h4>
+					<ul>
+						<li>Create Unlimited Number of Projects</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li class="sub"><h3>Your Projects</h3>
+			<ul>
+				<li>Create/Delete Projects</li>
+				<li class="subsub">Assign User Ranks
+					<ul>
+						<li class="subsubsub"><h4>Control (Rank)</h4>
+							<ul>
+								<li>Delete/Add Projects</li>
+								<li>Change Project Status</li>
+								<li>Assign Tasks to People</li>
+								<li>Comment on Projects</li>
+								<li>Upload Pictures</li>
+							</ul>
+						</li>
+						<li class="subsubsub"><h4>Modify (Rank)</h4>
+							<ul>
+								<li>Change Project Status</li>
+								<li>Assign Tasks to People</li>
+								<li>Comment on Projects</li>
+								<li>Upload Pictures</li>
+							</ul>
+						</li>
+						<li class="subsubsub"><h4>Contribute (Rank)</h4>
+							<ul>
+								<li>Comment on Projects</li>
+								<li>Upload Pictures</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li class="sub"><h3>Assigned Projects</h3>
+			<ul>
+				<li>View Projects Assigned to You</li>
+				<li>Do any of the above for the rank assigned to you</li>
+			</ul>
+		</li>
+	</ul>
+</section>
+</main>
+
+</body>
+</html>
