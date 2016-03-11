@@ -11,8 +11,7 @@
 						 WHERE posts.is_published = 1
 						 AND posts.category_id = categories.category_id
 						 AND posts.user_id = users.user_id
-						 ORDER BY posts.date DESC
-						 LIMIT 2";
+						 ORDER BY posts.date DESC";
 			// run the query
 			$result = $db->query($query);
 			// if the result is bad, show us the db error message
@@ -25,7 +24,7 @@
 			// loop through the posts that it found
 		?>
 
-		<h2>Latest Posts:</h2>
+		<h2>My Blog</h2>
 
 		<?php while($row = $result->fetch_assoc()){ ?>
 
@@ -43,11 +42,6 @@
 
 		<?php
 			} //end while loop
-		?>
-
-		<a href="blog.php">Read the rest of my blog!</a>
-
-		<?php
 			} else { // end if posts found
 				echo 'No posts found!';
 			} // end else posts found

@@ -1,7 +1,8 @@
 	<aside>
 		<?php
 		// get the titles of up to 5 latest published posts
-		$query_latest = "SELECT title
+		// and coun tthe comments on each post
+		$query_latest = "SELECT title, post_id
 						FROM posts
 						WHERE is_published = 1
 						ORDER BY date DESC
@@ -16,7 +17,10 @@
 			<ul>
 				<?php while($row_latest = $result_latest->fetch_assoc()){ ?>
 
-				<li><a href="#"><?php echo $row_latest['title']; ?></a></li>
+				<li>
+					<a href="#"><?php echo $row_latest['title']; ?></a>
+								(<?php count_comments($row_latest['post_id']); ?>)
+				</li>
 
 				<?php
 				} //end while loop
@@ -28,9 +32,11 @@
 		<?php } //end if ?>
 
 		<?php
-		$query_categories = "SELECT name
-							FROM categories
-							ORDER BY name ASC";
+		$query_categories = "SELECT categories.*, COUNT(*) AS total
+							FROM categories, posts
+							WHERE categories.category_id = posts.category_id
+							GROUP BY posts.category_id
+							ORDER BY categories.name ASC";
 
 		$side_categories = $db->query($query_categories);
 
@@ -41,7 +47,10 @@
 			<ul>
 				<?php while($row_categories = $side_categories->fetch_assoc()){ ?>
 
-				<li><a href="#"><?php echo $row_categories['name']; ?></a></li>
+				<li>
+					<a href="#"><?php echo $row_categories['name']; ?></a>
+								(<?php echo $row_categories['total']; ?>)
+				</li>
 
 				<?php } // end while loop
 				$side_categories->free(); ?>
