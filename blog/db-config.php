@@ -11,4 +11,7 @@ if($db->connect_errno > 0){
 	die('Could not connect to the Database: ' . $db->connect_error);
 }
 
+// error reporting: hide notices
+error_reporting(E_ALL & ~E_NOTICE);
+
 // no close PHP!
