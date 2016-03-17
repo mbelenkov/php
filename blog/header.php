@@ -6,6 +6,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script|Alegreya+Sans:400,700,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="alternate" type="application/rss+xml" href="rss.php">
 </head>
 <body>
 	<header>
