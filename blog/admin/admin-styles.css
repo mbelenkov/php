@@ -254,6 +254,9 @@ form input[type=submit] {
 .feedback.error li:before {
   border-left-color: #ffc4ad;
 }
+.error {
+  border-color: #40E0D0;
+}
 .feedback.success {
   background: #98eee6;
   color: #08322e;

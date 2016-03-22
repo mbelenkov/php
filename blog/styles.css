@@ -111,6 +111,9 @@ li {
 	margin-bottom: 5px;
 	margin-left: 15px;
 }
+.error {
+	background-color: #40E0D0;
+}
 
 /* footer */
 footer {

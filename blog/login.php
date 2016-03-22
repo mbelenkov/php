@@ -86,9 +86,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>Log In to your account</title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="admin/admin-styles.css">
 </head>
-<body>
+<body class="login">
 	<h1>Log In</h1>
 	<?php
 		if(isset($message)){

@@ -32,4 +32,11 @@ function count_comments($post_id){
 		$result->free();
 	} //end if
 } // end function
+
+// use for hilighting form fields with a error
+function field_error($problem){
+	if(isset($problem)){
+		echo 'class="error"';
+	}
+}
 // no close php

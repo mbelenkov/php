@@ -1,0 +1,82 @@
+/*
+#EB5937 - orange
+#1C1919 - black
+#403D3C - charcoal
+#456F74 - blue
+#D3CBBD - white
+*/
+
+/* the below combination allows you to change a particular component of the design back to the default of content-box */
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+.component {
+	/* designed to work in default box-sizing */
+	/* in your page, you could reset it to normal */
+	box-sizing: content-box;
+}
+
+/* clear fix */
+.cf:before,
+.cf:after {
+  content: "";
+  display: block; 
+}
+.cf:after {
+  clear: both;  
+}
+.cf {
+  zoom: 1;
+}
+
+/* general */
+body {
+	background-color: #1C1919;
+	color: #D3CBBD;
+}
+li {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+	color: #D3CBBD;
+}
+a:hover {
+	color: #456F74;
+}
+
+/* header */
+header,
+nav,
+footer  {
+	background-color: #403D3C;
+	padding: 0 5%;
+}
+header {
+}
+input.search {
+	font-family: FontAwesome;
+	border-radius: 25px;
+	background-color: #EB5937;
+	border: none;
+	outline: none;
+	padding: 3px 10px;
+	color: #D3CBBD;
+}
+nav {
+	border-top: 3px solid #EB5937;
+	border-bottom: 3px solid #EB5937;
+}
+
+/* main */
+
+/* footer */
+footer {
+	border-top: 3px solid #EB5937;
+}
+footer figure:first-child {
+	border-bottom: 1px solid #EB5937;
+}
