@@ -17,4 +17,10 @@ $db->set_charset("utf8");
 // error reporting: hide notices
 error_reporting(E_ALL & ~E_NOTICE);
 
+// define some url/path constants so it makes linking to stuff easier
+// URL is for href, src and other HTML stuff
+// PATH is for includes and other PHP stuff
+define('ROOT_URL', 'http://localhost/maxBelenkov/blog');
+define('ROOT_PATH', 'C:\xampp\htdocs\maxBelenkov\blog');
+
 // no close PHP!

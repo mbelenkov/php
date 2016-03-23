@@ -86,7 +86,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Log In to your account</title>
-	<link rel="stylesheet" type="text/css" href="admin/admin-styles.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ROOT_URL; ?>/admin/admin-styles.css">
 </head>
 <body class="login">
 	<h1>Log In</h1>
@@ -100,7 +100,7 @@
 		<input type="text" name="username">
 
 		<label>Password:</label>
-		<input type="text" name="password">
+		<input type="password" name="password">
 
 		<input type="submit" value="Log In">
 		<input type="hidden" name="did_login" value="1">

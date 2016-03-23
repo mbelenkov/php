@@ -15,17 +15,17 @@
 				<input class="search" type="text" name="phrase" placeholder="&#xf002; Search our site...">
 				<input type="submit">
 			</form>
-			<a href="">Login</a>
-			<a href="">Sign Up</a>
+			<a href="#">Login</a>
+			<a href="#">Sign Up</a>
 			<a class="hamburger menu-link" href="#menu"><span></span></a>
 		</header>
 
 		<nav id="menu" role="navigation">
 			<ul>
-				<li><a href="">Home</a></li>
-				<li><a href="">Reviews</a></li>
-				<li><a href="">Movies</a></li>
-				<li><a href="">About</a></li>
-				<li><a href="">Contact</a></li>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Reviews</a></li>
+				<li><a href="#">Movies</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
 			</ul>
 		</nav>
