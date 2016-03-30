@@ -45,19 +45,23 @@ function field_error($problem){
 // @param $is_published: BOOLEAN. 1 = published posts (default)
 // 								  0 = drafts
 // @return int. the total number of posts
-function count_posts($user_id, $is_published){
+function count_posts( $user_id = 0, $is_published = 1 ){
 	global $db;
 	$query = "SELECT COUNT(*) AS total
-			  FROM posts
-			  WHERE user_id = $user_id
-			  AND is_published = $is_published";
+	FROM posts 
+	WHERE is_published = $is_published";
+	if($user_id){
+		$query .= " AND user_id = $user_id";
+	}
 	$result = $db->query($query);
-	// COUNT only returns one row
-	if(!$result){
+	if(! $result){
 		echo $db->error;
 	}
+	//COUNT only returns one row. no loop needed
 	$row = $result->fetch_assoc();
 	return $row['total'];
+
+	$result->free();
 }
 
 /**
@@ -84,6 +88,24 @@ function most_popular_post($user_id){
 		return $row['title'] . '(' . $row['total'] . ')';
 	} else {
 		return 'Your posts do not have any comments yet.';
+	}
+}
+
+/**
+ * Helper for checking a checkbox if two values match
+ */
+function checked( $thing1, $thing2 ){
+	if( $thing1 == $thing2 ){
+		echo 'checked';
+	}
+}
+
+/**
+ * Helper for selecting an option in a dropdown if two values match
+ */
+function selected( $thing1, $thing2 ){
+	if( $thing1 == $thing2 ){
+		echo 'selected';
 	}
 }
 
