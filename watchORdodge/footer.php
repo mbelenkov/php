@@ -11,16 +11,17 @@
 
 				<section>
 					<h5>CONNECT WITH US</h5>
-					<a href="rss.php"><img src="" alt="RSS Logo"></a>
-					<a href="https://plus.google.com/collections/featured"><img src="" alt="Google+ Logo"></a>
-					<a href="http://www.facebook.com"><img src="" alt="Facebook Logo"></a>
-					<a href="http://www.twitter.com"><img src="" alt="Twitter Logo"></a>
+					<a href="rss.php"><i class="fa fa-rss-square fa-2x"></i>
+</a>
+					<a href="https://plus.google.com/collections/featured"><i class="fa fa-google-plus-square fa-2x"></i></a>
+					<a href="http://www.facebook.com"><i class="fa fa-facebook-square fa-2x"></i></a>
+					<a href="http://www.twitter.com"><i class="fa fa-twitter-square fa-2x"></i></a>
 				</section>
 
 				<section>
 					<h5>CONTACT US</h5>
-					<p><a href="tel:123-456-7890">(123) 456-7890</a><br>
-					   <a href="mailto:random@email.com">random@email.com</a></p>
+					<p><a class="tel" href="tel:123-456-7890">(123) 456-7890</a><br>
+					   <a class="email" href="mailto:random@email.com">random@email.com</a></p>
 				</section>
 
 				<section>
