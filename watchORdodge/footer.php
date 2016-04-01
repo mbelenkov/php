@@ -31,7 +31,7 @@
 
 			<figure>
 				<section>
-					<h6>&copy; Website Name</h6>
+					<h6>&copy; watchORdodge</h6>
 				</section>
 
 				<section>

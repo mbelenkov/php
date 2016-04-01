@@ -40,6 +40,31 @@ function field_error($problem){
 	}
 }
 
+/**
+ * Count the number of comments written by any user
+ * @param  	int 	$user_id Any valid user ID.
+ * @return 	int 	the number of comments
+ */
+function count_user_comments( $user_id, $is_approved = 1 ){
+	global $db;
+	//count the approved comments on the post
+	$query = "SELECT COUNT(*) AS total 
+	FROM comments
+	WHERE  is_approved = $is_approved";
+	if($user_id){
+		$query .= " AND user_id = $user_id";
+	}
+	//run it!
+	$result = $db->query($query);
+	//check it
+	if( $result->num_rows >= 1 ){		
+		$row = $result->fetch_assoc();
+		return  $row['total'];			
+		//free it
+		$result->free();
+	} //end if	
+}//end function
+
 // count the number of posts that any user has written
 // @param $user_id: int. the ID of any user
 // @param $is_published: BOOLEAN. 1 = published posts (default)
@@ -106,6 +131,31 @@ function checked( $thing1, $thing2 ){
 function selected( $thing1, $thing2 ){
 	if( $thing1 == $thing2 ){
 		echo 'selected';
+	}
+}
+
+/**
+* show any user's pic at any size
+*/
+function show_userpic($user_id, $size){
+	// get the userpic from the DB
+	global $db;
+	$query = "SELECT userpic
+			  FROM users
+			  WHERE user_id = $user_id
+			  LIMIT 1";
+	$result = $db->query($query);
+	if(!$result){
+		echo $db->error;
+	}
+	if($result->num_rows == 1){
+		// display the userpic if they have one, otherwise show the default userpic
+		$row = $result->fetch_assoc();
+		if($row['userpic'] == ''){
+			echo '<img class="default_userpic userpic" src="' . ROOT_URL . '/uploads/default_user.png" alt="default userpic">';
+		} else {
+			echo '<img class="userpic" src="' . ROOT_URL . '/uploads/' . $row['userpic'] . '_' . $size . '.jpg" alt="userpic">';
+		}
 	}
 }
 
