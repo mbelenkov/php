@@ -31,7 +31,7 @@
 		<?php while($row = $result->fetch_assoc()){ ?>
 
 		<section>
-			<h4><a href="#"><?php echo $row['title']; ?></a></h4>
+			<h4><a href="reviews.php?movie_id=<?php echo $row['movie_id']; ?>"><?php echo $row['title']; ?></a></h4>
 		</section>
 
 		<?php } // end while loop
@@ -62,7 +62,7 @@
 		<?php while($row = $result->fetch_assoc()){ ?>
 
 		<section>
-			<h4><a href="#"><?php echo $row['username']; ?></a></h4>
+			<h4><a href="profiles.php?user_id=<?php echo $row['user_id']; ?>"><?php echo $row['username']; ?></a></h4>
 		</section>
 
 		<?php } // end while loop

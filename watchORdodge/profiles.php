@@ -1,6 +1,6 @@
 <?php
-  $thisTitle = "Home";
-  $thisPage = "dHome";
+  $thisTitle = "Profile";
+  $thisPage = "dProfile";
 
   require('db_config.php')
 ?>

@@ -24,10 +24,9 @@
 
 		<nav id="menu" role="navigation">
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Reviews</a></li>
-				<li><a href="#">Movies</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="movies.php">Movies</a></li>
+				<li><a href="about.php">About</a></li>
+				<li><a href="contact.php">Contact</a></li>
 			</ul>
 		</nav>
