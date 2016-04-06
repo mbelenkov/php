@@ -18,7 +18,10 @@ $db->set_charset("utf8");
 error_reporting(E_ALL & ~E_NOTICE);
 
 // url & paths defined
-define('ROOT_URL', 'http://localhost/maxBelenkov/watchORdodge');
-define('ROOT_PATH', 'C:\xampp\htdocts\maxBelenkov\watchORdodge');
+//define('ROOT_URL', 'http://localhost/maxBelenkov/watchORdodge');
+//define('ROOT_PATH', 'C:\xampp\htdocts\maxBelenkov\watchORdodge');
+
+define('ROOT_URL', 'http://localhost/php/maxBelenkov/watchORdodge');
+define('ROOT_PATH', 'C:\xampp\htdocts\php\maxBelenkov\watchORdodge');
 
 // no close PHP
