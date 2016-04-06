@@ -1,3 +1,6 @@
+<?php
+	require('db_config.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +20,27 @@
 			<form action="search.php" method="get">
 				<input class="search" type="text" name="phrase" placeholder="&#xf002; Search our site...">
 			</form>
-			<a href="login.php">Login</a>
-			<a href="signUp.php">Sign Up</a>
+			<?php
+				$secretkey = $_SESSION['secretkey'];
+
+				$query = "SELECT username
+						  FROM users
+						  WHERE secret_key = '$secretkey'
+						  LIMIT 1";
+				$result = $db->query($query);
+				
+				if($secretkey == ''){
+					echo '<a href="login.php">Login</a>';
+					echo '<a href="signUp.php">Sign Up</a>';
+				} else {
+					while($row = $result->fetch_assoc()){
+						echo '<h3>Welcome, ' . $row['username'] . '!</h3>';
+					}
+					echo '<a href="admin/index.php">Profile</a>';
+					echo '<a href="login.php?action=logout">Logout</a>';
+				}
+			?>
+			
 			<a class="hamburger menu-link" href="#menu"><span></span></a>
 		</header>
 

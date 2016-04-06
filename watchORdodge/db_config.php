@@ -24,4 +24,5 @@ error_reporting(E_ALL & ~E_NOTICE);
 define('ROOT_URL', 'http://localhost/php/maxBelenkov/watchORdodge');
 define('ROOT_PATH', 'C:\xampp\htdocts\php\maxBelenkov\watchORdodge');
 
+session_start();
 // no close PHP

@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  // session_start();
   require('db_config.php');
 
   $thisTitle = "Login";
@@ -69,6 +69,13 @@
 
   // logout
   if($_GET['action'] == 'logout'){
+    $secretkey = $_SESSION['secretkey'];
+    // remove secret key from DB
+    $query = "UPDATE users
+              SET secret_key = ''
+              WHERE secret_key = '$secretkey'";
+    $result = $db->query($query);
+
   	// remove session and cookies
   	session_destroy();
 

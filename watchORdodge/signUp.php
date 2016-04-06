@@ -89,7 +89,7 @@
 
 <main>
 	<section>
-		<form action="" method="post">
+		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 			<h2>Register Here!</h2>
 
 			<?php
@@ -130,7 +130,7 @@
 
 			<label>
 				<input type="checkbox" name="policy" value="1">
-				I agree to the <a href="tos.php" target="_new">terms of service</a> and <a href="privacyPolicy.php" target="_new">privacy policy</a>.
+				I agree to the <a href="tos.php" target="new">terms of service</a> and <a href="privacyPolicy.php" target="new">privacy policy</a>.
 			</label>
 
 			<input type="submit" value="Sign Up">
