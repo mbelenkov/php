@@ -88,7 +88,7 @@
 <?php include('header.php'); ?>
 
 <main>
-	<section>
+	<section class="signup-box">
 		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 			<h2>Register Here!</h2>
 
@@ -109,31 +109,31 @@
 				}
 			?>
 
-			<label>Account Type:</label>
+			<label class="notSwitch">Account Type:</label>
 			<div class="onoffswitch">
-		        <input type="checkbox" name="is_critic" value="1" class="onoffswitch-checkbox" id="myonoffswitch">
-		        <label class="onoffswitch-label" for="myonoffswitch">
-		            <span class="onoffswitch-inner"></span>
-		            <span class="onoffswitch-switch"></span>
-		        </label>
-		    </div>
+		      <input type="checkbox" name="is_critic" value="1" class="onoffswitch-checkbox" id="myonoffswitch">
+		      <label class="onoffswitch-label" for="myonoffswitch">
+		          <span class="onoffswitch-inner"></span>
+		          <span class="onoffswitch-switch"></span>
+		      </label>
+		  </div>
 
 
-			<label>Username:</label>
-			<input type="text" name="username" value="" placeholder="6 - 30 Characters">
+			<label class="notSwitch">Username:</label>
+			<input class="notSwitch" type="text" name="username" value="" placeholder="6 - 30 Characters">
 
-			<label>Password:</label>
-			<input type="password" name="password" value="" placeholder="6 Characters minimum">
+			<label class="notSwitch">Password:</label>
+			<input class="notSwitch" type="password" name="password" value="" placeholder="6 Characters minimum">
 
-			<label>Email:</label>
-			<input type="email" name="email" placeholder="you@mail.com">
+			<label class="notSwitch">Email:</label>
+			<input class="notSwitch" type="email" name="email" placeholder="you@mail.com">
 
-			<label>
+			<label class="checkbox">
 				<input type="checkbox" name="policy" value="1">
 				I agree to the <a href="tos.php" target="new">terms of service</a> and <a href="privacyPolicy.php" target="new">privacy policy</a>.
 			</label>
 
-			<input type="submit" value="Sign Up">
+			<input class="button notSwitch" type="submit" value="Sign Up">
 			<input type="hidden" name="did_register" value="1">
 		</form>
 	</section>

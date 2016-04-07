@@ -1,6 +1,6 @@
 <?php
-  $thisTitle = "Home";
-  $thisPage = "dHome";
+  $thisTitle = "About Us";
+  $thisPage = "dAbout";
 ?>
 
 <?php include('header.php'); ?>

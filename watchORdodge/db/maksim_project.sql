@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.4.14
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2016 at 08:44 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: Apr 07, 2016 at 04:08 PM
+-- Server version: 5.6.26
+-- PHP Version: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `maksim_project`
@@ -30,7 +30,7 @@ USE `maksim_project`;
 
 DROP TABLE IF EXISTS `genres`;
 CREATE TABLE IF NOT EXISTS `genres` (
-`genre_id` mediumint(9) NOT NULL,
+  `genre_id` mediumint(9) NOT NULL,
   `genre_name` varchar(254) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
@@ -67,21 +67,21 @@ INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES
 
 DROP TABLE IF EXISTS `movies`;
 CREATE TABLE IF NOT EXISTS `movies` (
-`movie_id` mediumint(9) NOT NULL,
+  `movie_id` mediumint(9) NOT NULL,
   `title` varchar(50) NOT NULL,
   `release_date` datetime NOT NULL,
   `description` text NOT NULL,
   `critic_rating` tinyint(2) NOT NULL,
   `user_rating` tinyint(2) NOT NULL,
   `moviepic` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `movies`
 --
 
 INSERT INTO `movies` (`movie_id`, `title`, `release_date`, `description`, `critic_rating`, `user_rating`, `moviepic`) VALUES
-(1, 'test movie', '2016-03-30 00:00:00', 'this is a test movie', 0, 0, ''),
+(1, 'Test Movie', '2016-03-30 00:00:00', 'This is the movie description. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 0, 0, ''),
 (2, 'The Dark Knight', '2008-07-18 00:00:00', 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.', 0, 0, ''),
 (3, 'Inception', '2010-07-16 00:00:00', 'A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.', 0, 0, ''),
 (4, 'Star Wars: Episode V - The Empire Strikes Back', '1980-06-20 00:00:00', 'After the rebels have been brutally overpowered by the Empire on their newly established base, Luke Skywalker takes advanced Jedi training with Master Yoda, while his friends are pursued by Darth Vader as part of his plan to capture Luke.', 0, 0, ''),
@@ -192,7 +192,10 @@ INSERT INTO `movies` (`movie_id`, `title`, `release_date`, `description`, `criti
 (109, 'The Revenant', '2016-01-08 00:00:00', 'A frontiersman on a fur trading expedition in the 1820s fights for survival after being mauled by a bear and left for dead by members of his own hunting team.', 0, 0, ''),
 (110, 'Butch Cassidy and the Sundance Kid', '1969-10-24 00:00:00', 'Two Western bank/train robbers flee to Bolivia when the law gets too close.', 0, 0, ''),
 (111, 'The Man Who Shot Liberty Valance', '1962-04-22 00:00:00', 'A senator, who became famous for killing a notorious outlaw, returns for the funeral of an old friend and tells the truth about his deed.', 0, 0, ''),
-(112, 'High Noon', '1952-07-30 00:00:00', 'A marshall, personally compelled to face a returning deadly enemy, finds that his own town refuses to help him.', 0, 0, '');
+(112, 'High Noon', '1952-07-30 00:00:00', 'A marshall, personally compelled to face a returning deadly enemy, finds that his own town refuses to help him.', 0, 0, ''),
+(113, 'The Jungle Book', '2016-04-15 00:00:00', 'An orphan boy is raised in the jungle with the help of a pack of wolves, a bear, and a black panther.', 0, 0, ''),
+(114, 'Criminal', '2016-04-15 00:00:00', 'The memories & skills of a deceased CIA agent are implanted into an unpredictable and dangerous convict.', 0, 0, ''),
+(115, 'Ratchet and Clank', '2016-04-29 00:00:00', 'Ratchet and Clank tells the story of two unlikely heroes as they struggle to stop a vile alien named Chairman Drek from destroying every planet in the Solana Galaxy.', 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -202,10 +205,10 @@ INSERT INTO `movies` (`movie_id`, `title`, `release_date`, `description`, `criti
 
 DROP TABLE IF EXISTS `movie_genres`;
 CREATE TABLE IF NOT EXISTS `movie_genres` (
-`movie_genres_id` mediumint(9) NOT NULL,
+  `movie_genres_id` mediumint(9) NOT NULL,
   `movie_id` mediumint(9) NOT NULL,
   `genre_id` mediumint(9) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=345 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=354 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `movie_genres`
@@ -554,7 +557,16 @@ INSERT INTO `movie_genres` (`movie_genres_id`, `movie_id`, `genre_id`) VALUES
 (341, 1, 4),
 (342, 1, 7),
 (343, 1, 13),
-(344, 1, 18);
+(344, 1, 18),
+(345, 113, 2),
+(346, 113, 7),
+(347, 113, 8),
+(348, 114, 1),
+(349, 114, 6),
+(350, 114, 7),
+(351, 115, 3),
+(352, 115, 1),
+(353, 115, 2);
 
 -- --------------------------------------------------------
 
@@ -564,13 +576,13 @@ INSERT INTO `movie_genres` (`movie_genres_id`, `movie_id`, `genre_id`) VALUES
 
 DROP TABLE IF EXISTS `reviews`;
 CREATE TABLE IF NOT EXISTS `reviews` (
-`review_id` mediumint(9) NOT NULL,
+  `review_id` mediumint(9) NOT NULL,
   `user_id` mediumint(9) NOT NULL,
   `date` datetime NOT NULL,
   `rating` tinyint(2) NOT NULL,
   `body` text NOT NULL,
   `movie_id` mediumint(9) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `reviews`
@@ -578,7 +590,12 @@ CREATE TABLE IF NOT EXISTS `reviews` (
 
 INSERT INTO `reviews` (`review_id`, `user_id`, `date`, `rating`, `body`, `movie_id`) VALUES
 (1, 3, '2016-03-31 11:20:00', 7, 'This was an okay movie.', 1),
-(2, 5, '2016-03-31 11:20:00', 5, 'I was genuinely displeased.', 1);
+(2, 5, '2016-03-31 11:20:00', 5, 'I was genuinely displeased.', 1),
+(5, 1, '2016-04-07 04:37:42', 10, 'This is a test review.', 1),
+(7, 1, '2016-04-07 05:26:58', 10, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 109),
+(8, 1, '2016-04-07 05:27:18', 9, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 14),
+(9, 1, '2016-04-07 05:27:37', 8, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 17),
+(10, 3, '2016-04-07 05:35:33', 9, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 65);
 
 -- --------------------------------------------------------
 
@@ -588,7 +605,7 @@ INSERT INTO `reviews` (`review_id`, `user_id`, `date`, `rating`, `body`, `movie_
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-`user_id` mediumint(9) NOT NULL,
+  `user_id` mediumint(9) NOT NULL,
   `username` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(40) NOT NULL,
@@ -605,9 +622,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `bio`, `date_joined`, `is_admin`, `is_critic`, `userpic`, `secret_key`) VALUES
-(1, 'mBelenkov', 'mbelenkov1227@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'first account', '2016-03-30 11:16:15', 1, 1, '', '74a40514b40b031a440c9550b494250459d4ce90'),
-(3, 'testAccountRegular', 'you@mail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '', '2016-03-31 11:02:23', 0, 0, '', '7d842076e0698bc2d7ff363816ff1682db7fca94'),
-(5, 'testAccountCritic', 'you2@mail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '', '2016-03-31 11:03:41', 0, 1, '', '03b27bc93e247464854f0d6c27e83b85be0689f7'),
+(1, 'mBelenkov', 'mbelenkov1227@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'first account', '2016-03-30 11:16:15', 1, 1, '', ''),
+(3, 'testAccountRegular', 'you@mail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2016-03-31 11:02:23', 0, 0, '', ''),
+(5, 'testAccountCritic', 'you2@mail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2016-03-31 11:03:41', 0, 1, '', '03b27bc93e247464854f0d6c27e83b85be0689f7'),
 (6, 'melissa', 'you3@mail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '', '2016-03-31 11:26:23', 0, 0, '', '1b7cc3b7ad5c2d4e75acc4a95f07b11570a468f4');
 
 --
@@ -618,31 +635,31 @@ INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `bio`, `date_jo
 -- Indexes for table `genres`
 --
 ALTER TABLE `genres`
- ADD PRIMARY KEY (`genre_id`);
+  ADD PRIMARY KEY (`genre_id`);
 
 --
 -- Indexes for table `movies`
 --
 ALTER TABLE `movies`
- ADD PRIMARY KEY (`movie_id`);
+  ADD PRIMARY KEY (`movie_id`);
 
 --
 -- Indexes for table `movie_genres`
 --
 ALTER TABLE `movie_genres`
- ADD PRIMARY KEY (`movie_genres_id`);
+  ADD PRIMARY KEY (`movie_genres_id`);
 
 --
 -- Indexes for table `reviews`
 --
 ALTER TABLE `reviews`
- ADD PRIMARY KEY (`review_id`);
+  ADD PRIMARY KEY (`review_id`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
- ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -652,27 +669,27 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `genres`
 --
 ALTER TABLE `genres`
-MODIFY `genre_id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+  MODIFY `genre_id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-MODIFY `movie_id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=113;
+  MODIFY `movie_id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=116;
 --
 -- AUTO_INCREMENT for table `movie_genres`
 --
 ALTER TABLE `movie_genres`
-MODIFY `movie_genres_id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=345;
+  MODIFY `movie_genres_id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=354;
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-MODIFY `review_id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `review_id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `user_id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `user_id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

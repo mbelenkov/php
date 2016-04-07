@@ -17,11 +17,12 @@
 	<div class="container">
 		<header class="mainNav">
 			<a href="index.php"><h1>watchORdodge</h1></a>
-			<form action="search.php" method="get">
+			<form class="nav-search" action="search.php" method="get">
 				<input class="search" type="text" name="phrase" placeholder="&#xf002; Search our site...">
 			</form>
 			<?php
 				$secretkey = $_SESSION['secretkey'];
+				$user_id = $_COOKIE['user_id'];
 
 				$query = "SELECT username
 						  FROM users
@@ -30,25 +31,28 @@
 				$result = $db->query($query);
 				
 				if($secretkey == ''){
-					echo '<a href="login.php">Login</a>';
-					echo '<a href="signUp.php">Sign Up</a>';
+					echo '<div class="nav-action-login"><a href="login.php"><i class="fa fa-sign-in"></i>
+ Login</a>';
+					echo '<a href="signUp.php"><i class="fa fa-user-plus"></i>
+ Sign Up</a></div>';
 				} else {
 					while($row = $result->fetch_assoc()){
-						echo '<h3>Welcome, ' . $row['username'] . '!</h3>';
+						echo '<div class="nav-action-logout"><h3>Welcome, ' . $row['username'] . '!</h3>';
 					}
-					echo '<a href="admin/index.php">Profile</a>';
-					echo '<a href="login.php?action=logout">Logout</a>';
+					echo '<a href="profiles.php?user_id=' . $user_id . '"><i class="fa fa-user"></i> Profile</a>';
+					echo '<a href="login.php?action=logout"><i class="fa fa-sign-out"></i>
+ Logout</a></div>';
 				}
 			?>
 			
-			<a class="hamburger menu-link" href="#menu"><span></span></a>
+			<!-- <a class="hamburger menu-link" href="#menu"><span></span></a> -->
 		</header>
 
 		<nav id="menu" role="navigation">
 			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="movies.php">Movies</a></li>
-				<li><a href="about.php">About</a></li>
-				<li><a href="contact.php">Contact</a></li>
+				<li><a class="nHome" href="index.php">Home</a></li>
+				<li><a class="nMovies" href="movies.php">Movies</a></li>
+				<li><a class="nAbout" href="about.php">About</a></li>
+				<li><a class="nContact" href="contact.php">Contact</a></li>
 			</ul>
 		</nav>

@@ -57,7 +57,7 @@
   				die($db->error);
   			} else {
   				// go to admin panel
-  				header('Location:admin/');
+  				header('Location:movies.php');
   			}
   		} else {
   			$message = 'Your login information is incorrect, please try again.';
@@ -90,7 +90,7 @@
 <?php include('header.php'); ?>
 
 <main>
-	<section>
+	<section class="login-box">
 		<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 			<h2>Login Here!</h2>
 
@@ -106,7 +106,7 @@
 			<input type="password" name="password">
 
 			<a href="#">Forgot your username or password?</a>
-			<input type="submit" value="Submit">
+			<input class="button" type="submit" value="Submit">
 			<input type="hidden" name="did_login" value="1">
 		</form>
 	</section>

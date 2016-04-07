@@ -18,6 +18,26 @@ html {
 	/* in your page, you could reset it to normal */
 	box-sizing: content-box;
 }
+html,
+body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+.container {
+    min-height:100%;
+    position:relative;
+}
+main {
+    padding-bottom: 202px;   /* Height of the footer element */
+}
+footer {
+    width:100%;
+    height:202px;
+    position:absolute;
+    bottom:0;
+    left:0;
+}
 
 /* clear fix */
 .cf:before,
@@ -50,6 +70,9 @@ a:hover {
 }
 h1 {
 	font-family: 'Kaushan Script', cursive;
+    margin: 0;
+    padding: 15px 0;
+    line-height: 2.25em;
 }
 
 /* header */
@@ -59,7 +82,8 @@ footer  {
 	background-color: #403D3C;
 	padding: 0 5%;
 }
-header {
+header.mainNav {
+    height:75px;
 }
 input.search {
 	font-family: FontAwesome;
@@ -69,95 +93,479 @@ input.search {
 	outline: none;
 	padding: 3px 10px;
 	color: #D3CBBD;
+    width: 200px;
+}
+.mainNav h1,
+.mainNav .nav-search,
+.mainNav .nav-action-login {
+    display: inline;
+}
+.nav-search {
+    margin-left: 500px;
+}
+.nav-action-logout,
+.nav-action-login {
+    float: right;
+    margin-left: 20px;
+}
+i {
+    margin-right: 7px;
+}
+.nav-action-logout a,
+.nav-action-login a {
+    margin: 0 20px;
+    line-height: 5.35em;
+}
+.nav-action-logout h3 {
+    margin: 0;
+    text-align: right;
+    line-height: 1.75em;
+}
+.nav-action-logout a {
+    line-height: 1.75em;
+}
+.nav-action-logout a:last-child {
+    margin-right: 0;
 }
 nav {
 	border-top: 3px solid #EB5937;
 	border-bottom: 3px solid #EB5937;
 }
+nav#menu ul {
+    text-align: right;
+}
+nav#menu li {
+    display: inline;
+}
+nav#menu li a {
+    padding: 16px 20px;
+    font-size: 1.15em;
+}
 
 /* main */
+main {
+    margin: 0 5%;
+}
+.movie-icon {
+    margin: 1.8%;
+}
+#dHome .new-releases .movie-icon {
+    margin: 3.6%;
+}
+h2 {
+    font-size: 2em;
+    margin: 0;
+    margin-top: 20px;
+}
+#dReviews .review-movie {
+    margin-bottom: 20px;
+}
+#dHome h2,
+#dHome h3 {
+    text-align: center;
+}
+#dHome .new-releases {
+    border-bottom: 1px solid #EB5937;
+}
+#dHome .new-releases .movie-icon h3 {
+    font-size: 2em;
+}
+#dHome .new-releases .movie-icon h4 {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+#dReviews .movie-info section,
+#dReviews .movie-info img {
+    float: left;
+}
+#dReviews .movie-info section {
+    margin-left: 20px;
+    width: 85%;
+}
+#dReviews .movie-info h3,
+#dReviews .movie-info h4 {
+    margin: 0 0 10px;
+}
+#dReviews .movie-info h4 {
+    font-size: .85em;
+}
+#dReviews .movie-info a {
+    margin: 0 5px;
+}
+#dReviews .movie-info p {
+    border-top: 1px solid #EB5937;
+    padding-top: 10px;
+}
+#dReviews .user-reviews,
+#dReviews .critic-reviews {
+    width: 50%;
+    float: left;
+    background-color: #403D3C;
+    margin: 20px 0;
+}
+.critic-reviews h2,
+.user-reviews h2 {
+    margin: 0;
+}
+#dReviews .user-reviews {
+    border-left: 3px solid #1C1919;
+}
+#dReviews .critic-reviews {
+    border-right: 3px solid #1C1919;
+}
+#dReviews .user-reviews div,
+#dReviews .critic-reviews div {
+    background-color: #EB5937;
+}
+#dReviews .user-reviews article,
+#dReviews .critic-reviews article {
+    border-bottom: 1px solid #EB5937;;
+    width: 90%;
+    margin: 0 auto;
+}
+#dReviews .user-reviews article:last-child,
+#dReviews .critic-reviews article:last-child {
+    border: none;
+}
+#dReviews span.average-rating {
+    border-radius: 50%;
+    padding: 0 25px;
+    background-color: #403D3C;
+    font-size: 2em;
+}
+#dReviews section div h2 {
+    text-align: center;
+    padding: 10px;
+}
+#dReviews .review-movie textarea {
+    background-color: #1C1919;
+    border: none;
+    color: #D3CBBD;
+    padding: 5px;
+    display: block;
+    width: 90%;
+    margin: 20px 5%;
+    height: 200px;
+}
+#dReviews .review-movie input {
+    margin: 0 10px 0 5%;
+}
+#dReviews .review-movie h3 {
+    margin-left: 5%;
+    padding-top: 20px;
+}
+#dReviews .review-movie .button {
+    background-color: #EB5937;
+    border: none;
+    color: #D3CBBD;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+#dReviews .review-movie .button:hover {
+    background-color: #456F74;
+    transition: ease .5s all;
+}
+#dReviews h3 {
+    font-size: 1em;
+}
+#dReviews .critic-reviews h4,
+#dReviews .critic-reviews h3,
+#dReviews .critic-reviews img,
+#dReviews .critic-reviews p,
+#dReviews .user-reviews h4,
+#dReviews .user-reviews h3,
+#dReviews .user-reviews img,
+#dReviews .user-reviews p {
+    margin-left: 20px;
+}
+#dReviews .review-movie {
+    background-color: #403D3C;
+}
+#dSignUp .signup-box,
+#dLogin .login-box {
+    background-color: #403D3C;
+    width: 40%;
+    margin: 0 30% 20px;
+    height: 480px;
+}
+#dSignUp .signup-box input.notSwitch,
+#dLogin .login-box input {
+    display: block;
+    margin: 10px auto 40px;
+    width: 300px;
+    height: 35px;
+    background-color: #1C1919;
+    border: none;
+    color: #D3CBBD;
+    padding-left: 10px;
+    border: 1px solid #1C1919;
+}
+#dSignUp .signup-box input.notSwitch:focus,
+#dLogin .login-box input:focus {
+    border: 1px solid #EB5937;
+}
+#dSignUp .signup-box input.button,
+#dLogin .login-box input.button {
+    background-color: #EB5937;
+    border: none;
+}
+#dSignUp .signup-box input.button:hover,
+#dLogin .login-box input.button:hover {
+    background-color: #456F74;
+}
+#dSignUp .signup-box label.notSwitch,
+#dLogin .login-box label {
+    font-size: 1.75em;
+    margin-left: 80px;
+}
+#dLogin .login-box a {
+    font-size: .75em;
+    text-align: center;
+    margin: 0 30%;
+}
+#dSignUp h2 ,
+#dLogin h2 {
+    text-align: center;
+    border-top: 20px solid #D3CBBD;
+    border-bottom: 5px solid #EB5937;
+    padding: 20px 0;
+    font-size: 2.25em;
+}
+#dSignUp .signup-box {
+    height: 750px;
+}
+#dSignUp .checkbox {
+    font-size: .75em;
+    line-height: 1.5em;
+    margin: 0 24%;
+}
+#dSignUp .signup-box label:nth-child(4){
+    display: block;
+    margin-left: 0;
+    border-top: 1px solid #EB5937;
+    padding-left: 80px;
+    padding-top: 10px;
+}
+body#dHome nav#menu li a.nHome,
+body#dMovies nav#menu li a.nMovies,
+body#dAbout nav#menu li a.nAbout,
+body#dContact nav#menu li a.nContact {
+    background-color: #EB5937;
+    color: #D3CBBD;   
+}
+#dMovies main input.search {
+    margin-left: 1.8%;
+}
+#dSearch article {
+    width: 50%;
+    float: left;
+}
 
 /* footer */
 footer {
 	border-top: 3px solid #EB5937;
 }
+footer figure {
+    margin: 0;
+}
+footer figure.foot-top section {
+    width: 25%;
+    float: left;
+}
+footer figure.foot-top section ul {
+    margin: 0 0 20px;
+    padding: 0;
+}
+footer figure.foot-top section p {
+    margin: 0;
+}
+footer section.mini-logo {
+    float: left;
+}
+footer h5 {
+    font-size: 1.1em;
+    margin: 20px 0 5px;
+}
+footer h6 {
+    font-size: .75em;
+    font-weight: 400;
+}
+footer #mc_embed_signup input.email {
+    width: 199px;
+    float: left;
+    background-color: #1C1919;
+    border: none;
+    border-radius: 0;
+    color: #D3CBBD;
+}
+footer input#mc-embedded-subscribe.button {
+    border-radius: 0;
+    background-color: #EB5937;
+    color: #D3CBBD;
+}
+footer input#mc-embedded-subscribe.button:hover {
+    background-color: #456F74;
+}
+footer section.mini-nav {
+    float: right;
+}
+footer section.mini-nav ul li {
+    display: inline;
+    font-size: .75em;
+}
+footer section.mini-nav ul li a {
+    margin: 0 5px;
+}
+footer section.mini-nav ul li:last-child a {
+    margin-left: 5px;
+    margin-right: 0;
+}
 footer figure:first-child {
 	border-bottom: 1px solid #EB5937;
 }
-footer .tel:before {
-    content: "\f095";
-    font-family: FontAwesome;
-}
-footer .email:before {
-    content: "\f0e0";
-    font-family: FontAwesome;
-}
 
 /* switch */
-    .onoffswitch {
-        position: relative;
-        width: 200px;
-        -webkit-user-select:none;
-        -moz-user-select:none;
-        -ms-user-select: none;
-    }
-    .onoffswitch-checkbox {
-        display: none;
-    }
-    .onoffswitch-label {
-        display: block;
-        overflow: hidden;
-        cursor: pointer;
-        border: 2px solid #EB5937;
-        border-radius: 0px;
-    }
-    .onoffswitch-inner {
-        display: block;
-        width: 200%;
-        margin-left: -100%;
-        transition: margin 0.3s ease-in 0s;
-        background-color: #EB5937;
-    }
-    .onoffswitch-inner:before, .onoffswitch-inner:after {
-        display: block; float:
-        left; width: 50%;
-        height: 75px;
-        padding: 0;
-        line-height: 75px;
-        font-size: 20px;
-        color: white;
-        font-weight: bold;
-        box-sizing: border-box;
-    }
-    .onoffswitch-inner:before {
-        content: "Critic";
-        padding-left: 30px;
-        background-color: #EB5937;
-        color: #D3CBBD;
-    }
-    .onoffswitch-inner:after {
-        content: "Regular";
-        padding-right: 30px;
-        background-color: #EB5937;
-        color: #D3CBBD;
-        text-align: right;
-    }
-    .onoffswitch-switch {
-        display: block;
-        width: 50px;
-        margin: 12.5px;
-        background: #403D3C;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 121px;
-        border: 2px solid #EB5937;
-        border-radius: 0px;
-        transition: all 0.3s ease-in 0s; 
-    }
-    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-        margin-left: 0;
-    }
-    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-        right: 0px; 
-    }
+.onoffswitch {
+    margin: 10px auto 20px;
+    position: relative;
+    width: 200px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #EB5937;
+    border-radius: 0px;
+}
+.onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+    background-color: #EB5937;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float:
+    left; width: 50%;
+    height: 75px;
+    padding: 0;
+    line-height: 75px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "Critic";
+    padding-left: 30px;
+    background-color: #EB5937;
+    color: #D3CBBD;
+}
+.onoffswitch-inner:after {
+    content: "Regular";
+    padding-right: 30px;
+    background-color: #EB5937;
+    color: #D3CBBD;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block;
+    width: 50px;
+    margin: 12.5px;
+    background: #403D3C;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 121px;
+    border: 2px solid #EB5937;
+    border-radius: 0px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+/* movie caption */
+.caption-style-large,
+.caption-style{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    
+}
+.caption-style-large li,
+.caption-style li{
+    float: left;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+}
+.caption-style-large li:hover .caption,
+.caption-style li:hover .caption{
+    opacity: 1;
+}
+.caption-style-large img,
+.caption-style img{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    z-index: 4;
+}.caption-style-large .caption,
+.caption-style .caption{
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition:all 0.45s ease-in-out;
+    -moz-transition:all 0.45s ease-in-out;
+    -o-transition:all 0.45s ease-in-out;
+    -ms-transition:all 0.45s ease-in-out;
+    transition:all 0.45s ease-in-out;
+
+}
+.caption-style .blur{
+    background-color: rgba(235,89,55,0.7);
+    width: 150px;
+    height: 222px;
+    z-index: 5;
+    position: absolute;
+}
+.caption-style-large .caption-text h1,
+.caption-style .caption-text h1{
+    text-transform: uppercase;
+    font-size: 24px;
+}
+.caption-style .caption-text{
+    z-index: 10;
+    color: #fff;
+    position: absolute;
+    width: 150px;
+    height: 222px;
+    text-align: center;
+    top:100px;
+}
+.caption-style-large .blur{
+    background-color: rgba(235,89,55,0.7);
+    width: 300px;
+    height: 444px;
+    z-index: 5;
+    position: absolute;
+}
+.caption-style-large .caption-text {
+    z-index: 10;
+    color: #fff;
+    position: absolute;
+    width: 300px;
+    height: 444px;
+    text-align: center;
+    top:100px;
+}

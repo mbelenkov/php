@@ -9,10 +9,12 @@
 
 <main>
 <section>
-	<!-- TODO: https://mixitup.kunkalabs.com/ -->
+	<!-- TODO: https://mixitup.kunkalabs.com/
 	<input type="button" value="Ratings">
 	<input type="button" value="Popularity">
-	<form action="movies.php" method="get">
+	 -->
+	<h2>Our Movie Database:</h2>
+	<form class="movie-search" action="movies.php" method="get">
 		<input class="search" type="text" name="phrase" placeholder="&#xf002; Search for movies...">
 	</form>
 </section>
@@ -34,17 +36,18 @@
 		echo $db->error;
 	}
 ?>
-<article>
-	<!-- TODO: http://hasinhayder.github.io/ImageCaptionHoverAnimation/index.html -->
-	<ul>
+<article class="cf">
+	<ul class="caption-style">
 	<?php while($row = $result->fetch_assoc()){ ?>
-			<li>
-				<img src="#" alt="#">
+			<li class="movie-icon">
+				<img src="<?php echo ROOT_URL . '/movie_pics/thumb/' . $row['movie_id'] . '.jpg'; ?>" alt="<?php echo $row['title']; ?>">
 				<div class="caption">
-					<div class="blur"></div>
-					<div class="caption-text">
-						<h3><a href="reviews.php?movie_id=<?php echo $row['movie_id']; ?>"><?php echo $row['title']; ?></a></h3>
-					</div>
+					<a href="reviews.php?movie_id=<?php echo $row['movie_id']; ?>">
+						<div class="blur"></div>
+						<div class="caption-text">
+							<h3><?php echo $row['title']; ?></h3>
+						</div>
+					</a>
 				</div>
 			</li>
 	<?php } // end while loop ?>
